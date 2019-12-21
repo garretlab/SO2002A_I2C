@@ -1,6 +1,11 @@
 #ifndef SO2002A_I2C_H
 #define SO2002A_I2C_H
 
+#ifndef __SAM3X8E__ 
+#error "Not Arduino Due"
+#error "Remove this with care"
+#endif
+
 #include "Print.h"
 
 /* 
