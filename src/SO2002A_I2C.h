@@ -1,9 +1,13 @@
 #ifndef SO2002A_I2C_H
 #define SO2002A_I2C_H
 
-#ifndef __SAM3X8E__ 
-#error "Not Arduino Due"
-#error "Remove this with care"
+#if defined(__SAM3X8E__) // Arduino Due
+// confirmed board
+#elif defined(ARDUINO_AVR_NANO) || defined(__AVR_ATmega328P__) // Arduino Nano (New bootloader)
+// confirmed board
+#else
+#error "Unconfirmed Arduino Board"
+#error "No garantee to work, so remove this with care"
 #endif
 
 #include "Print.h"
